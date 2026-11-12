@@ -1,0 +1,42 @@
+[package]
+name = "frame-studio"
+version = "2.1.2-rc.1"
+description = "Professional multi-page photography collage editor"
+authors = ["曼陀罗"]
+license.workspace = true
+edition = "2021"
+default-run = "frame-studio"
+
+[lib]
+name = "frame_studio_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+collage-core = { path = "../crates/collage-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+uuid = { version = "1", features = ["v4"] }
+blake3 = "1"
+image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+fast_image_resize = { version = "6.0", features = ["image"] }
+moxcms = "0.8"
+jpeg-encoder = "0.7"
+tempfile = "3"
+bytemuck = "1"
+tokio = { version = "1", features = ["sync"] }
+flate2 = "1"
+crc32fast = "1"
+base64 = "0.22"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+block2 = "0.6"
+objc2-app-kit = { version = "0.3", default-features = false, features = ["std", "NSColor", "NSColorSpace", "NSColorSampler", "block2", "objc2-core-foundation"] }
+objc2-core-foundation = { version = "0.3", default-features = false, features = ["std", "CFArray", "CFAttributedString", "CFDictionary", "CFNumber", "CFString"] }
+objc2-core-graphics = { version = "0.3", default-features = false, features = ["std", "CGBitmapContext", "CGColor", "CGColorSpace", "CGContext", "CGImage", "CGPath"] }
+objc2-core-text = { version = "0.3", default-features = false, features = ["std", "CTFont", "CTFontDescriptor", "CTFontManager", "CTFontTraits", "CTLine", "CTStringAttributes", "CTTypesetter", "objc2-core-graphics"] }

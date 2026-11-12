@@ -1,0 +1,22 @@
+.page-template-action { pointer-events: auto; flex-shrink: 0; min-height: 23px; padding: 3px 6px; gap: 4px; border: 1px solid #d2dcd4; border-radius: 4px; background: #fbfcf9; color: #536c5e; font-size: 10px; white-space: nowrap; }
+.page-template-action:hover { background: #f0f4ee; border-color: #aebfb3; }
+.page-template-action > svg { flex-shrink: 0; }
+.canvas-workspace .page-label { height: auto; min-height: 26px; gap: 5px; }
+.page-label .page-heading { min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 5px; width: 100%; }
+.page-label .page-heading > button:first-child { min-width: 0; flex: 1; justify-content: flex-start; overflow: hidden; }
+.page-label .page-heading > button:first-child > span:last-child { overflow: hidden; text-overflow: ellipsis; }
+.page-label .page-actions { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+.page-label .page-template-action { padding: 3px 6px; gap: 4px; font-size: 10px; color: #536c5e; }
+.page-label.multiple { flex-direction: column; align-items: stretch; gap: 1px; height: 46px; }
+.page-label.multiple .page-actions { justify-content: space-between; }
+.page-label.compact .page-export-selection > span { display: none; }
+.page-label .page-heading .page-number { flex-shrink: 0; }
+.page-label.active .page-heading > button:first-child:before { content: ''; height: 4px; width: 4px; flex-shrink: 0; border-radius: 50%; background: #679453; }
+.overview .overview-caption { flex-direction: column; align-items: stretch; padding: 6px 4px; gap: 3px; }
+.overview-page-heading { display: flex; align-items: center; justify-content: space-between; gap: 5px; min-width: 0; }
+.overview-page-heading > span { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: grab; }
+.overview-page-actions { display: flex; align-items: center; justify-content: space-between; gap: 3px; cursor: default; }
+.overview-page-actions .page-template-action { padding: 3px 4px; gap: 3px; }
+.overview-page-actions .page-export-selection { padding: 2px 0; }
+.overview-page-actions .page-export-selection > span { display: none; }
+.overview .overview-page-heading, .overview .overview-page-actions { width: 100%; }

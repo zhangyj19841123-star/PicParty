@@ -1,0 +1,5 @@
+.save-template-source{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.save-template-source>.thumbnail{width:68px;height:auto;flex-shrink:0;border:1px solid #d8dfda;border-radius:3px;overflow:hidden}
+.save-template-source>div:last-child{min-width:0}
+.save-template-source b{display:block;font-size:12px;font-weight:550;overflow-wrap:anywhere}
+.save-template-source p{margin:8px 0 0;line-height:1.8;font-size:11px;color:#68776e}

@@ -1,0 +1,21 @@
+import { spawnSync } from 'node:child_process';
+import { existsSync, mkdirSync, statSync, readdirSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const env = { ...process.env };
+if (existsSync(path.join(root, '.tools/cargo'))) env.CARGO_HOME = path.join(root, '.tools/cargo');
+if (existsSync(path.join(root, '.tools/rustup'))) env.RUSTUP_HOME = path.join(root, '.tools/rustup');
+env.PATH = [path.join(env.CARGO_HOME || path.join(process.env.HOME, '.cargo'), 'bin'), path.dirname(process.execPath), env.PATH].join(path.delimiter);
+const output = path.join(root, 'public/core-wasm');
+const target = path.resolve(root, env.CARGO_TARGET_DIR || 'target');
+const sourceFiles = dir => readdirSync(dir, { withFileTypes: true }).flatMap(item => item.isDirectory() ? sourceFiles(path.join(dir, item.name)) : [path.join(dir, item.name)]);
+const generated = path.join(output, 'collage_wasm_bg.wasm');
+const sources = [path.join(root, 'Cargo.lock'), ...sourceFiles(path.join(root, 'crates'))].filter(existsSync);
+const force = process.argv.includes('--force');
+if (!force && existsSync(generated) && sources.every(file => statSync(file).mtimeMs < statSync(generated).mtimeMs)) process.exit(0);
+function run(command, args) { const result = spawnSync(command, args, { cwd: root, env, stdio: 'inherit' }); if (result.error) console.error(result.error.message); if (result.status !== 0) process.exit(result.status || 1); }
+run('cargo', ['build', '-p', 'collage-wasm', '--target', 'wasm32-unknown-unknown', '--release', '--locked']);
+mkdirSync(output, { recursive: true });
+const local = path.join(root, '.tools/wasm-bindgen/wasm-bindgen');
+run(existsSync(local) ? local : 'wasm-bindgen', [path.join(target, 'wasm32-unknown-unknown/release/collage_wasm.wasm'), '--target', 'web', '--out-dir', output, '--out-name', 'collage_wasm']);

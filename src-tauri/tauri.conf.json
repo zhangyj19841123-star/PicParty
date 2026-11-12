@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "拼图派 PicParty",
+  "version": "2.1.2-rc.1",
+  "identifier": "com.framestudio.collage",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "width": 1480,
+        "height": 960,
+        "minWidth": 1100,
+        "minHeight": 700,
+        "resizable": true,
+        "dragDropEnabled": true,
+        "backgroundColor": "#F6F4EC",
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "trafficLightPosition": {
+          "x": 18,
+          "y": 18
+        }
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: http://asset.localhost blob: data:; connect-src ipc: http://ipc.localhost 'self'; font-src 'self' data:",
+      "devCsp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: http://asset.localhost blob: data:; connect-src ipc: http://ipc.localhost 'self' ws://127.0.0.1:1420; font-src 'self' data:",
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APPCACHE/proxies/**"
+        ]
+      },
+      "capabilities": [
+        "main-window"
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "app",
+      "dmg"
+    ],
+    "category": "Photography",
+    "shortDescription": "Photo Collage & Creative Layout",
+    "copyright": "Copyright © 2026 曼陀罗",
+    "resources": {
+      "../LICENSE": "LICENSE",
+      "../docs/Mac-install.md": "Mac-install.md",
+      "../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md",
+      "../third-party-licenses/LICENSES.txt": "third-party-licenses/LICENSES.txt"
+    },
+    "icon": [
+      "icons/icon.png",
+      "icons/system-icon.icns"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "13.0",
+      "signingIdentity": "-",
+      "hardenedRuntime": true,
+      "bundleVersion": "2.1.2"
+    }
+  }
+}

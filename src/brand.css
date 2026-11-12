@@ -1,0 +1,34 @@
+:root {
+  --accent: #285a3c;
+  --brand-cream: #f6f4ec;
+  --brand-yellow: #ffc928;
+  --brand-leaf: #a8c99a;
+  --brand-green: #438a58;
+}
+
+.brand-icon {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: none;
+}
+
+.boot-screen {
+  background: var(--brand-cream);
+  color: var(--accent);
+}
+
+.boot-screen .brand-icon {
+  width: 96px;
+  height: 96px;
+}
+
+.boot-screen h1 {
+  color: var(--accent);
+}
+
+.app-header .brand {
+  flex: none;
+  white-space: nowrap;
+}

@@ -1,0 +1,10 @@
+.thumbnail.photo-drop-surface{touch-action:none}
+.thumbnail-frame-target{position:absolute;cursor:grab;outline-offset:-2px}
+.thumbnail-frame-target.empty{cursor:default}
+.thumbnail-frame-target.photo-drop-target{outline:2px solid #64786e;background:#64786e16}
+.photo-pointer-dragging,.photo-pointer-dragging *{cursor:grabbing!important;user-select:none!important}
+.overview-page .page-check,.overview-page .unplaced-badge{pointer-events:none}
+.overview-actions .overview-add-button{border:1px solid var(--line);border-radius:5px;padding:7px 10px;white-space:nowrap;flex-shrink:0}
+.strip-label{width:90px;flex-shrink:0}
+.strip-label .strip-new-page{height:23px;gap:3px;padding:3px 5px;font-size:9px;border:1px solid var(--line);border-radius:4px;white-space:nowrap}
+.strip-page>.strip-page-caption{width:100%;justify-content:center;cursor:grab}

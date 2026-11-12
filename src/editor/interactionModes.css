@@ -1,0 +1,6 @@
+.interaction-modes{display:flex;align-items:center;gap:2px;margin-left:8px;padding:3px;border:1px solid #d6ddda;border-radius:6px;background:#edf0ec}
+.interaction-modes>button{gap:5px;padding:5px 8px;border-radius:4px;white-space:nowrap;font-size:11px;color:#6f7b75}
+.interaction-modes>button[aria-pressed=true]{background:#fff;color:#344b42;box-shadow:0 1px 3px #23312012}
+.interaction-modes>button kbd{font-size:9px;padding:0 3px;background:transparent}
+@media(max-width:1100px){.interaction-modes{margin-left:3px}.interaction-modes>button{padding-inline:5px;font-size:10px}.interaction-modes>button kbd{display:none}}
+@media(max-width:1000px){.editor-toolbar{height:84px;grid-template-columns:1fr auto;grid-template-rows:39px 39px;gap:0 8px}.editor-toolbar .workspace-switch{grid-column:1 / -1;grid-row:2;justify-self:center}.editor-toolbar .toolbar-right{grid-column:2;grid-row:1}}

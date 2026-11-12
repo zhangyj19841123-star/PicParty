@@ -1,0 +1,58 @@
+.wm-color-inputs {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 5px;
+}
+
+.watermark-modal .wm-color-inputs > input[type=color] {
+  cursor: pointer;
+  padding: 4px;
+}
+
+.wm-color-inputs > input[type=color]::-webkit-color-swatch-wrapper { padding: 0; }
+.wm-color-inputs > input[type=color]::-webkit-color-swatch {
+  border: 1px solid #a6b5a8;
+  border-radius: 3px;
+}
+
+.watermark-modal .wm-color-inputs > input[type=text] {
+  font-variant-numeric: tabular-nums;
+  padding-inline: 4px;
+}
+
+.watermark-modal .wm-color-inputs > input:disabled {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.wm-selection-color-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  min-height: 24px;
+}
+
+.wm-selection-color-status .wm-field-note {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wm-selection-color-status > button.quiet-button {
+  flex: none;
+  padding: 4px 7px;
+  font-size: 10px;
+}
+
+.wm-text-effects h3 {
+  font-size: 12px;
+  color: var(--wm-forest);
+  font-weight: 600;
+  margin: 0;
+}
+
+.wm-text-effects .wm-check { margin: 0; }
+.wm-text-effects .wm-fields-pair { margin-top: 7px; }

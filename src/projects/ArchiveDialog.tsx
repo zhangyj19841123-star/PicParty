@@ -1,0 +1,14 @@
+import { useEffect, useRef, useState } from 'react';
+import { Archive, Check, LoaderCircle } from 'lucide-react';
+import { Modal } from '../components/Modal';
+import { archiveProgress, cancelArchive, type ArchiveProgress } from './library';
+import './projects.css';
+export function ArchiveDialog({ jobId, onClose, onComplete, onBusyChange }: { jobId: string; onClose(): void; onComplete(progress: ArchiveProgress): Promise<void>; onBusyChange(value: boolean): void }) {
+  const [progress,setProgress]=useState<ArchiveProgress|null>(null),[error,setError]=useState(''),[cancelling,setCancelling]=useState(false),[finishing,setFinishing]=useState(false);
+  const done=useRef(false), busy=progress?.state==='running'||!progress;
+  const callback=useRef(onComplete);callback.current=onComplete;
+  const busyCallback=useRef(onBusyChange);busyCallback.current=onBusyChange;
+  useEffect(()=>{busyCallback.current(busy||finishing);return()=>busyCallback.current(false);},[busy,finishing]);
+  useEffect(()=>{let ended=false,checking=false; const check=async()=>{if(checking||ended||done.current)return;checking=true;try{const value=await archiveProgress(jobId);if(ended)return;setProgress(value);setError('');if(value.state!=='running'){done.current=true;if(value.state==='completed'){setFinishing(true);try{await callback.current(value);}catch(e){if(!ended)setError(String(e));}finally{if(!ended)setFinishing(false);}}}}catch(e){if(!ended)setError(`读取进度失败：${String(e)}，任务仍受保护，可重试。`);}finally{checking=false;}};void check();const timer=setInterval(()=>void check(),350);return()=>{ended=true;clearInterval(timer);};},[jobId]);
+  return <Modal title={progress?.kind==='import'?'导入项目归档':'打包完整归档'} className="project-archive-dialog" onClose={()=>{if(!busy&&!finishing)onClose();}}><div className="modal-body"><div className="archive-status">{busy||finishing?<LoaderCircle size={24} className="spin"/>:progress?.state==='completed'?<Check size={24}/>:<Archive size={24}/>}<strong>{finishing?'正在打开导入项目…':progress?.message||'正在准备归档任务…'}</strong></div><progress aria-label="项目归档进度" max={Math.max(1,progress?.total??1)} value={progress?.completed??0}/><p className="form-note">{progress?.completed??0} / {progress?.total??0} · {busy?'原项目和原始照片保持不变':progress?.state==='completed'?'归档已完成完整性校验':progress?.state==='cancelled'?'任务已取消，原项目保持不变':'任务未完成'}</p>{progress?.path&&<p className="archive-result-path">{progress.path}</p>}{(error||progress?.error)&&<p className="form-error">{error||progress?.error}</p>}</div><footer>{busy?<button className="quiet-button" disabled={cancelling} onClick={async()=>{setCancelling(true);try{await cancelArchive(jobId);}catch(e){setError(String(e));setCancelling(false);}}}>{cancelling?'正在取消…':'取消任务'}</button>:<button className="primary-button" disabled={finishing} onClick={onClose}>完成</button>}</footer></Modal>;
+}

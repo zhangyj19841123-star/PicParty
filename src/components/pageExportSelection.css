@@ -1,0 +1,22 @@
+.page-export-selection { display: inline-flex; align-items: center; gap: 5px; min-height: 26px; flex-shrink: 0; padding: 2px 4px; color: #67736c; font-size: 10px; cursor: pointer; border-radius: 4px; }
+.page-export-selection:hover { background: #334b3d08; }
+.page-export-selection input { width: 13px; height: 13px; margin: 0; accent-color: #607a6b; cursor: pointer; }
+.page-export-selection:has(input:focus-visible) { outline: 2px solid #7f9388; outline-offset: 2px; }
+.page-export-selection:has(input:disabled) { cursor: default; opacity: .55; }
+.page-export-selection input:disabled { cursor: default; }
+.page-label .page-export-selection { pointer-events: auto; }
+.overview-caption { gap: 6px; }
+.overview-caption > span { min-width: 0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.export-page-selection { margin: -8px 0 19px; border: 1px solid #dfe5dc; border-radius: 6px; overflow: hidden; background: #ffffff80; }
+.export-page-selection-header { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; padding: 9px 11px; border-bottom: 1px solid #e7ebe3; color: #657166; font-size: 11px; }
+.export-page-selection-header b { font-weight: 500; }
+.export-page-selection-header span { margin-right: auto; color: #778176; font-size: 10px; }
+.export-page-selection-header button { font-size: 10px; padding: 3px 5px; border-radius: 3px; }
+.export-page-selection-list { max-height: 184px; overflow-y: auto; }
+.export-page-selection-row { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 3px 10px; border-bottom: 1px solid #eff1ec; }
+.export-page-selection-row:last-child { border-bottom: 0; }
+.export-page-selection-row > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; color: #57675b; font-size: 11px; }
+.export-page-selection-row > small { font-size: 10px; color: #7f8980; }
+.export-page-selection-row .page-export-selection { min-height: 28px; padding-left: 0; }
+.export-page-selection-row .page-export-selection > span { display: none; }
+.export-empty-selection { margin: -8px 0 17px; color: #7d7063; font-size: 11px; line-height: 1.6; }

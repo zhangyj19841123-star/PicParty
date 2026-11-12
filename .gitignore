@@ -1,0 +1,34 @@
+node_modules/
+dist/
+target/
+.tools/
+.pnpm-store/
+.DS_Store
+*.log
+test-results/
+artifacts/
+src/core/wasm/
+
+
+*.tsbuildinfo
+release/
+
+# Private workspace data and signing credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.p8
+*.key
+*.dmg
+*.provisionprofile
+*.collage
+*.zip
+diagnostics/
+.local/
+
+# Python diagnostic script caches
+__pycache__/
+*.pyc

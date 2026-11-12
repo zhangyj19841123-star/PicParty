@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = ["crates/collage-core", "crates/collage-wasm", "src-tauri"]
+default-members = ["crates/collage-core"]
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+version = "0.1.0"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+

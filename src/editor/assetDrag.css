@@ -1,0 +1,8 @@
+.native .asset-tile{touch-action:none;-webkit-user-drag:none}
+.asset-pointer-dragging,.asset-pointer-dragging *{cursor:copy!important;user-select:none!important;-webkit-user-select:none!important}
+.asset-pointer-drag-ghost{position:fixed;z-index:1000;pointer-events:none;display:grid;grid-template-columns:auto 1fr;column-gap:9px;align-items:center;width:220px;min-height:54px;padding:8px 11px;background:#fff;border:1px solid #7f9c8b;border-radius:8px;box-shadow:0 5px 22px #223b302a;color:#3e5b4a}
+.asset-pointer-drag-ghost img{grid-row:1/3;width:36px;height:38px;object-fit:cover;border-radius:3px}
+.asset-pointer-drag-ghost span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:11px}
+.asset-pointer-drag-ghost small{font-size:9px;color:#89958c;margin-top:4px}
+.asset-pointer-drag-ghost:not(:has(img)){grid-template-columns:1fr}
+.background-image-drop.asset-pointer-drop-target{border-color:#608777!important;background:#e7f0e9!important;box-shadow:0 0 0 2px #60877735}

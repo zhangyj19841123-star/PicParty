@@ -1,0 +1,6 @@
+.photo-transform-bar{position:absolute;top:10px;left:50%;transform:translateX(-50%);z-index:8;display:flex;align-items:center;gap:12px;padding:8px 11px;border:1px solid #d1d9d4;border-radius:7px;background:#fbfcf9;box-shadow:0 3px 12px #233a2b10;white-space:nowrap;color:#4b5a51;font-size:11px;max-width:calc(100% - 20px)}
+.photo-transform-bar strong{font-size:11px;font-weight:600}.transform-tip{color:#8b958e;font-size:10px}
+.photo-transform-bar label{display:flex;align-items:center;gap:4px}.photo-transform-bar input{width:46px;padding:3px 4px;border:1px solid #d9dfdb;border-radius:3px;text-align:right;font-size:11px;background:#fff;color:#344b42}
+.photo-transform-bar button{display:flex;align-items:center;gap:4px;padding:3px;border-radius:3px}.photo-transform-bar button:hover{background:#eaf0eb}.photo-transform-bar kbd{font-size:9px;border:0;background:transparent;padding:0}
+.canvas-workspace.is-rotating .konvajs-content{cursor:var(--photo-rotation-cursor,crosshair)!important}
+@media(max-width:1250px){.photo-transform-bar .transform-tip{display:none}.photo-transform-bar{gap:8px}}

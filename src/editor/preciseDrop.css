@@ -1,0 +1,4 @@
+.precise-drop-hint{position:fixed;bottom:144px;left:50%;transform:translateX(-50%);z-index:90;display:flex;align-items:center;gap:9px;padding:11px 15px;border:1px solid #c4cec8;border-radius:7px;background:#fffffff2;color:#52675c;font-size:11px;box-shadow:0 3px 18px #182b2314;pointer-events:none}
+.add-page-button{white-space:nowrap;font-size:11px;gap:5px}
+.toolbar-right{gap:8px}
+@media(max-width:1100px){.add-page-button{padding-inline:6px;font-size:10px}.toolbar-right{gap:4px}}

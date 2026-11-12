@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+# Running a build must never silently reinstall dependencies or access the network.
+# Use an explicit frozen-lockfile install when dependency changes are intentional.
+verifyDepsBeforeRun: false
+updateNotifier: false
