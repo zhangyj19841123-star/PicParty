@@ -1,7 +1,7 @@
 {
   "name": "frame-studio",
   "private": true,
-  "version": "2.1.2-rc.1",
+  "version": "2.1.2-rc.2",
   "author": "曼陀罗",
   "license": "MIT",
   "type": "module",

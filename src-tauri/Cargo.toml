@@ -1,6 +1,6 @@
 [package]
 name = "frame-studio"
-version = "2.1.2-rc.1"
+version = "2.1.2-rc.2"
 description = "Professional multi-page photography collage editor"
 authors = ["曼陀罗"]
 license.workspace = true

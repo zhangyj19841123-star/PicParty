@@ -913,7 +913,7 @@ dependencies = [
 
 [[package]]
 name = "frame-studio"
-version = "2.1.2-rc.1"
+version = "2.1.2-rc.2"
 dependencies = [
  "anyhow",
  "base64 0.22.1",
