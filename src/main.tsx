@@ -4,6 +4,7 @@ import App from './App';
 import { brand } from './brand';
 import './styles.css';
 import './brand.css';
+import './flat-theme.css';
 
 document.title = `${brand.name} · 摄影拼图工作台`;
 ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
