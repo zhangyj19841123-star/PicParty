@@ -1,6 +1,6 @@
 # 拼图派 PicParty · 摄影拼图工作台
 
-拼图派 PicParty 是面向摄影师的 macOS 拼图、自由排版和批量水印应用。`2.1.2-rc.1` 为 Apple Silicon 候选版，原生部署目标为 macOS 13.0，前端目标为 Safari 16。
+拼图派 PicParty 是面向摄影师的 macOS 拼图、自由排版和批量水印应用。`2.1.2-rc.2` 为 Apple Silicon 候选版，原生部署目标为 macOS 13.0，前端目标为 Safari 16。
 
 **作者 / Author：曼陀罗 · © 2026 · [MIT License](LICENSE)**
 
